@@ -67,8 +67,9 @@ void lua_example_call_function(void){
 int native_pythagoras(lua_State* L){
     lua_Number b = lua_tonumber(L, -1);
     lua_Number a = lua_tonumber(L, -2);
-    float result = (float)a*a + (float)b*b;
-    return result;
+    lua_Number result = (a*a) + (b*b);
+    lua_pushnumber(L, result);
+    return 1;
 }
 
 void lua_example_call_c_function(void){
@@ -83,7 +84,7 @@ void lua_example_call_c_function(void){
         const int NUM_ARGS = 2;
         const int HOW_MANY_RETURNS = 1;
         lua_pcall(L, NUM_ARGS, HOW_MANY_RETURNS, 0);
-        lua_Number = result = lua_tonumber(L, -1);
+        lua_Number result = lua_tonumber(L, -1);
         printf("Native pythagpras (3,4) = %f\n", (float)result);
     }
     lua_close(L);

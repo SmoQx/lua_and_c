@@ -137,12 +137,12 @@ void lua_example_userdata(void){
     lua_close(L);
 }
 
-int main(int argc, char *argv[]){
-//    lua_example_dotfile();
-//    lua_example_getvar();
-//    lua_example_stack();
-//    lua_example_call_function();
-//    lua_example_call_c_function();
-//    lua_example_userdata();
-    return 0;
-}
+//int main(int argc, char *argv[]){
+////    lua_example_dotfile();
+////    lua_example_getvar();
+////    lua_example_stack();
+////    lua_example_call_function();
+////    lua_example_call_c_function();
+////    lua_example_userdata();
+//    return 0;
+//}

@@ -27,6 +27,10 @@ int main(){
         tax += over450 * tax_procentail;
         final_pay_witout_tax = final_pay_with_tax - tax;
     }
+
+    if (hours_worked > 40) {
+        printf("You work too much");
+    }
     printf("the pay rate: %d \n", basic_pay_rate);
     printf("tax: %f \n", tax);
     printf("final pay with tax: %f \n", final_pay_with_tax);

@@ -7,10 +7,12 @@ int add_two(int a, int b){
 
 
 int main(){
-
-    for (long int i; i<10000000001; i++) {
+    long int i;
+    scanf("%ld", &i);
+    printf("%li", i);
+    for (; i > 0; i--) {
         add_two(1, 1);
-        if (i == 10000000000) {
+        if (i == 1) {
         
             printf("%li", i);
         }

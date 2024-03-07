@@ -12,6 +12,7 @@ def how_long(a: list,  int_what: str):
 
 
 if __name__ == "__main__":
-    how_long(a = ["./count"], int_what = "C")
-    how_long(a= ["python3", "count.py"], int_what="Python")
+    how_long(a = ["./count", "10000000"], int_what = "C")
+    how_long(a= ["lua", "count.lua", "10000000"], int_what="lua")
+    how_long(a= ["python3", "count.py", "10000000"], int_what="Python")
 

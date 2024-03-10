@@ -1,10 +1,16 @@
 #include <stdio.h>
 
 
-//int lenghtof(int array) {
-//    return sizeof(array) / sizeof(array[0]);
-//    
-//}
+#define MONTHS 12
+
+
+int months(int month){
+    int days[MONTHS] = {31, 28, [4] = 31, 30, 31, [1] = 29};
+    for (int index = 0 ; index < MONTHS; index++) {
+        printf("%d \n", days[index]);
+    }
+    return days[month];
+}
 
 
 int main() {
@@ -21,5 +27,6 @@ int main() {
     printf("%2u \n", i);
     printf("%d\n", k[4]);
     printf("%s", tekst);
+    printf("\n Printing days in second month %d \n", months(1));
 
 }

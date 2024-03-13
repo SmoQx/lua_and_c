@@ -1,15 +1,15 @@
-import random
+import numpy as np
 
 
 def main():
-    rand_tabel = []
-    inner_table = []
-    for x in range(5):
-        for y in range(12):
-            inner_table[y] = random.randint(1, 100)
-        rand_tabel.append(inner_table)
+    rand_tabel = np.random.rand(5, 12)
+    print(rand_tabel)
     return rand_tabel
 
 
 if __name__ == "__main__":
-    print(main())
+    with open('tekst.txt', 'w') as save_the_data:
+        array_strin = str(main()).replace("[", "{")
+        array_strin = array_strin.replace("]", "},")
+        array_strin = array_strin.replace(" ", ", ")
+        save_the_data.write(array_strin)

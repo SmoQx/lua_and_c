@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 
 #define MONTHS 12
@@ -25,6 +26,17 @@ int main(){
     }
 
     printf("\nThe yearly average in %.1f inches. \n\n", total / YEARS);
+    
+    printf("Monthly avarage: \n\n");
+    printf("Jan  Feb  Mar  Apr  May  Jun  Jul  Aug  Sep  Oct  Nov  Dec\n");
+
+    for (month = 0; month < MONTHS; month++) {
+        for (year = 0, subtotal = 0; year < YEARS; year++) {
+            subtotal += rain_per_years[year][month];
+        }
+        printf("%4.1f ", subtotal/YEARS);
+    }
+    printf("\n");
 
     return 0;
 }

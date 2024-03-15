@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdarg.h>
 
 
 int gcd(int first_number, int second_number) {
@@ -41,6 +42,28 @@ int square_root(int number) {
 }
 
 
+int sum(int count, ...) {
+    int total = 0;
+    va_list args;
+    
+    // Initialize the va_list
+    va_start(args, count);
+    
+    // Loop through the variable arguments and sum them up
+    for (int i = 0; i < count; i++) {
+        // Get the next argument from the va_list
+        int num = va_arg(args, int);
+        // Add it to the total
+        total += num;
+    }
+    
+    // Clean up the va_list
+    va_end(args);
+    
+    return total;
+}
+
+
 int main() {
     int first = 3;
     int second = 6;
@@ -54,5 +77,6 @@ int main() {
     int num_to_sqrt2 = -2;
     printf("The square root is %d \n", square_root(num_to_sqrt));
     printf("The square root is %d \n", square_root(num_to_sqrt2));
+    printf("sum of two 2 is %d", sum(2, 2, 2));
     return 0;
 }

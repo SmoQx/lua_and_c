@@ -3,7 +3,6 @@
 
 
 void render(char game_board[3][3]) {
-    printf("Game board\n");
     for (int i = 0; i < sizeof(*game_board) / sizeof(*game_board[0]); i++) {
         for (int j = 0; j < sizeof(*game_board) / sizeof(*game_board[0]); j++) {
             printf(" [%c] ", game_board[i][j]);
@@ -78,16 +77,13 @@ int main() {
         } else {
             symbol = 'o';
         }
-        printf("You are %c\n", symbol);
         render(game_board);
+        printf("You are %c\n", symbol);
         update(game_board, symbol);
-        if (check_win_condition(game_board) == 'x') {
-            printf("The x won the game\n");
+        if (check_win_condition(game_board) == 'x' || check_win_condition(game_board) == 'o') {
+            printf("The %c won the game\n", check_win_condition(game_board));
             break;
-        } else if (check_win_condition(game_board) == 'o') {
-            printf("The o won the game\n");
-            break;
-        }     
+        } 
         counter++;
     }
     return 0;

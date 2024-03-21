@@ -53,7 +53,40 @@ void pointers_challeng() {
 }
 
 
+void pointers3(void) {
+    int number = 10;
+    int *p_number = &number;
+    printf("Number of number: %d\n", number);
+    *p_number += 25;
+    printf("After cahnging *p_number += 25\n");
+    printf("Number of number: %d\n", number);
+}
+
+
+void constant_value_with_pointer(void) {
+    long value = 1000;
+    long new = 10;
+    const long *p_value = &value;
+    long *const p_new = &new;
+    printf("value: %ld its pointer: %p and %p\n", value, p_value, &value);
+
+    value = 100;
+
+    printf("value: %ld its pointer: %p and %p\n", value, p_value, &value);
+//    p_new = &value; cannot do it
+    *p_new = value; // addres doesnt change but the value can
+    printf("the value of what p_new is pointing at changed to value %ld\n", *p_new);
+    p_value = &new; //but you can change the value either way ?!
+    printf("The value of waht p_value is poiting to%ld\n", *p_value); //weird you can change the what its pointing but cannot change using derefrence
+    printf("value: %ld its pointer: %p and %p\n", value, p_value, &value);
+    //*p_value = 150;
+    //compiler says cannot change the value of a constant 
+    //printf("value: %ld its pointer: %p\n", value, p_value);
+    
+}
+
+
 int main(void) {
-    pointers_challeng();
+    constant_value_with_pointer();
     return 0;
 }

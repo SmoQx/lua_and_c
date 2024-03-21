@@ -4,19 +4,19 @@
 
 void print_list(int size, int lenght, char list[size][lenght]) {
     for (int i = 0; i < size; i++) {
-        printf("%s\n", list[i]);
+        printf("\n%s\n", list[i]);
     }
 }
 
 
-void sort_string_array(char sorted_string_array[3][50], char list_to_be_sorted[3][50]) {
+void sort_string_array(int number_of_strings, char list_to_be_sorted[number_of_strings][50]) {
     char temp[50]; 
-    for (int i = 1; i <= 3; i++) {
-        for (int j = 0; j <= 3 - i; j++) {
+    for (int i = 0; i < number_of_strings; i++) {
+        for (int j = 0; j < number_of_strings - 1; j++) {
             if (strcmp(list_to_be_sorted[j], list_to_be_sorted[j+1]) > 0) {
                 strcpy(temp, list_to_be_sorted[j]);
-                strcpy(sorted_string_array[j], list_to_be_sorted[j+1]);
-                strcpy(sorted_string_array[j+1], temp);
+                strcpy(list_to_be_sorted[j], list_to_be_sorted[j+1]);
+                strcpy(list_to_be_sorted[j+1], temp);
             }
         }
     }
@@ -33,8 +33,8 @@ int main() {
         scanf("%s", strin_lsit[i]);
     }
 
-    sort_string_array(sorted_strings_array, strin_lsit);
-    print_list(number_of_strings, max_str_len, sorted_strings_array);
+    sort_string_array(number_of_strings, strin_lsit);
+    print_list(number_of_strings, max_str_len, strin_lsit);
 
     return 0;
 }

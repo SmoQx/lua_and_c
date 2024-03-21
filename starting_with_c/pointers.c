@@ -106,7 +106,17 @@ void void_pointers(void) {
 }
 
 
+void array_as_pointer(void) {
+    int numbers[10] = {2, 1, 3, 2, 4, 5, 2, 3};
+    int *p_numbers = &numbers[0];
+
+    for (int i = 0; i < 10; i++) {
+        printf("Number in numbers array: %d , and its address %p\n", *(p_numbers+i), p_numbers+i);
+    }
+}
+
+
 int main(void) {
-    void_pointers();
+    array_as_pointer();
     return 0;
 }

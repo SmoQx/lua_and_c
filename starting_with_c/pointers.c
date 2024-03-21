@@ -68,6 +68,7 @@ void constant_value_with_pointer(void) {
     long new = 10;
     const long *p_value = &value;
     long *const p_new = &new;
+    //const long *const p_new = &new; // a declaretion of a constant pointer which you cannot cahnge its addres and the value which is it pointing to
     printf("value: %ld its pointer: %p and %p\n", value, p_value, &value);
 
     value = 100;
@@ -86,7 +87,26 @@ void constant_value_with_pointer(void) {
 }
 
 
+void void_pointers(void) {
+    //you can cast any type into void ptr if you cast the value 
+    int i = 10;
+    float f = 2.34;
+    char ch = 'k';
+
+    void *v_ptr;
+    
+    v_ptr = &i;
+    printf("Value of i = %d\n", *(int *)v_ptr);
+    
+    v_ptr = &f;
+    printf("Value of f = %f\n", *(float *)v_ptr);
+    
+    v_ptr = &ch;
+    printf("Value of ch = %c\n", *(char *)v_ptr);
+}
+
+
 int main(void) {
-    constant_value_with_pointer();
+    void_pointers();
     return 0;
 }

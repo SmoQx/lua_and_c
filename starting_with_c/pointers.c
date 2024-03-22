@@ -113,9 +113,24 @@ void array_as_pointer(void) {
     for (int i = 0; i < 10; i++) {
         printf("Number in numbers array: %d , and its address %p\n", *(p_numbers+i), p_numbers+i);
     }
+    p_numbers++;
+    printf("%d\n", *p_numbers);
+    p_numbers++;
+    printf("%d\n", *p_numbers);
+}
+
+
+void pass_by_referenc(int a, int *b) {
+    *b += 1;
+    printf("%d\naddress of: %p\n, %d\naddress of %p\n", a, &a, *b, b);
 }
 
 
 int main(void) {
+    int a = 10;
+    int *b = &a;
+    printf("%d\naddress of: %p\n, %d\naddress of %p\n", a, &a, *b, b);
+    pass_by_referenc(a, b);
+    printf("%d\naddress of: %p\n, %d\naddress of %p\n", a, &a, *b, b);
     return 0;
 }

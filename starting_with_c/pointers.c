@@ -117,6 +117,5 @@ void array_as_pointer(void) {
 
 
 int main(void) {
-    array_as_pointer();
     return 0;
 }

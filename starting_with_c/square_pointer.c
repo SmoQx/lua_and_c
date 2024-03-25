@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 
 void squar(int *number) {
@@ -7,13 +8,18 @@ void squar(int *number) {
 
 
 int main(void) {
-    int n;
+    int *n = (int *)malloc(sizeof(int));
+    scanf("%d", n);
+    squar(n);
+    printf("%d\n", *n);
+
+    /*int n;
     int *ptr_n = &n;
     scanf("%d", ptr_n);
     printf("%d\n", *ptr_n);
     squar(ptr_n);
     printf("%d\n", n);
-
+    */
     /*
      or it can be like this 
      int n

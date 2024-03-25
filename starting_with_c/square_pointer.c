@@ -13,21 +13,18 @@ int main(void) {
     squar(n);
     printf("%d\n", *n);
 
-    /*int n;
-    int *ptr_n = &n;
-    scanf("%d", ptr_n);
-    printf("%d\n", *ptr_n);
-    squar(ptr_n);
-    printf("%d\n", n);
-    */
-    /*
-     or it can be like this 
-     int n
-     scanf("%d", &n);
-     printf("%d\n", n);
-     squar(&n);
-     printf("%d\n", n);
-     */
+    int i;
+    int *ptr_i = &i;
+    scanf("%d", ptr_i);
+    printf("%d\n", *ptr_i);
+    squar(ptr_i);
+    printf("%d\n", i);
+
+    int j;
+    scanf("%d", &j);
+    printf("%d\n", j);
+    squar(&j);
+    printf("%d\n", j);
 
     return 0;
 }

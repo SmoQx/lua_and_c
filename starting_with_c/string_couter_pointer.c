@@ -2,11 +2,11 @@
 
 
 int count_len(const char *string) {
-    const void *ptr = string;
-    while (*string) {
-        string++;
+    const char *ptr = string;
+    while (*ptr) {
+        ptr++;
     }
-    return (void*)string - ptr;
+    return ptr - string;
 }
 
 

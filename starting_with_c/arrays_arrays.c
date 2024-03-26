@@ -8,7 +8,7 @@ int main(void) {
         if (i % 100 == 0) {
             printf("%d\t", vals[0]);
         }
-        if (counter == 11) {
+        if (counter == 10) {
             counter = 0;
         }
         vals[0 + counter] = i;

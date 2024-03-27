@@ -1,3 +1,4 @@
+#include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -19,5 +20,31 @@ int main() {
     }
     free(p_num);
     p_num = NULL;
+
+    int* p_nums = (int*)calloc(20, sizeof(int));
+    if (!p_nums) {
+        printf("Can't allocate memory");
+        return -1;
+    }
+    *p_nums = 20;
+    printf("%d\t%p\n", *p_nums, p_nums);
+    printf("%d, %d\n", sizeof(p_nums), sizeof(int));
+    for (int i = 0; i < (20 * sizeof(int) / sizeof(int)); i++) {
+        printf("%d\t", p_nums[i]);
+    }
+    free(p_nums);
+    p_nums = NULL;
+
+
+    char *str = NULL;
+    str = (char *)malloc(256);
+    fgets(str, 256, stdin);
+    
+    printf("\n%s", str);
+
+    free(str);
+    str = NULL;
+
+
     return 0;
 }

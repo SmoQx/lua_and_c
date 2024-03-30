@@ -38,7 +38,7 @@ int main() {
 
     char *str = NULL;
     str = (char *)malloc(256);
-    fgets(str, 256, stdin);
+    gets(str);
     
     printf("\n%s", str);
 

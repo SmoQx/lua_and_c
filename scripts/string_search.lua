@@ -4,7 +4,7 @@ local function show_lines(text, my_string)
     print(text.." ".."was injected "..lenght_of_a_strign.."\n"..env_variables)
     env_variables = tostring(env_variables)
     print(type(env_variables))
-    print(string.len(env_variables))
+    print(string.len(env_variables), my_string, string.len(my_string))
     for i = 1, (string.len(env_variables) - string.len(my_string) + 1), 1 do
         if (string.sub(env_variables, i, i+string.len(my_string) - 1) == my_string) then
             print("Found a "..my_string.." in env at "..i)

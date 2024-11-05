@@ -18,15 +18,8 @@ jobs:
     - name: make build
       run: make build
 
-  merge:
-    runs-on: ubuntu-latest
-    needs: build
-    name: Merge Output Artifacts
-    steps:
-      - name: Merge Artifacts
-        uses: actions/upload-artifact/merge@v4
-        with:
-          name: ${{ inputs.archive_name }}
-          pattern: artifact-*
-          delete-merged: true    
-
+    - name: Upload binary as artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: main  # Name of the artifact
+        path: ./main 
